@@ -1,0 +1,240 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #334155;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  width: 260px;
+  background-color: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.sidebar h1 {
+  font-size: 1.4rem;
+  color: #0f172a;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  padding-left: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #64748b;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  background-color: #f1f5f9;
+  color: #3b82f6;
+  transform: translateX(4px);
+}
+
+/* Main Content Area */
+.main-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  padding: 45px 50px;
+}
+
+/* Mini Statistics Cards (Biar Gak Sepi) */
+.stats-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.stat-card {
+  flex: 1;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+.stat-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.stat-card h3 {
+  font-size: 1.6rem;
+  color: #0f172a;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+/* Section Cards */
+section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 35px;
+  margin-bottom: 45px;
+  box-shadow:
+    0 10px 25px -5px rgba(15, 23, 42, 0.04),
+    0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  border: 1px solid #e2e8f0;
+  scroll-margin-top: 40px;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 22px;
+  border-radius: 4px;
+}
+.title-reguler::before {
+  background-color: #3b82f6;
+}
+.title-prestasi::before {
+  background-color: #10b981;
+}
+.title-kedinasan::before {
+  background-color: #f59e0b;
+}
+
+/* Responsive Table */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* Memberikan jarak antarbaris biar terkesan modular */
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  color: #64748b;
+  font-weight: 700;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.8px;
+}
+
+td {
+  padding: 16px 18px;
+  background-color: #f8fafc; /* Tiap baris data punya background sendiri */
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+td:first-child {
+  border-left: 1px solid #e2e8f0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+  border-right: 1px solid #e2e8f0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+tr:hover td {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bold-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Badges yang Diperhalus */
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+.badge-reguler {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+.badge-prestasi {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+.badge-kedinasan {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+/* Cost Colors */
+.cost-reguler {
+  color: #2563eb;
+  font-weight: 700;
+}
+.cost-prestasi {
+  color: #059669;
+  font-weight: 700;
+}
+.cost-kedinasan {
+  color: #d97706;
+  font-weight: 700;
+}
